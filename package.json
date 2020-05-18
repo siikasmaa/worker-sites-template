@@ -1,0 +1,30 @@
+{
+  "name": "worker-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Template for Cloudflare worker-sites monorepo",
+  "author": "Otto Siikasmaa",
+  "license": "no-license",
+  "workspaces": [
+    "api",
+    "frontend"
+  ],
+  "scripts": {
+    "start": "yarn workspace @worker-template/frontend start",
+    "build": "yarn build:front && yarn build:api",
+    "build:front": "yarn workspace @worker-template/frontend build",
+    "build:api": "yarn workspace @worker-template/api build",
+    "deploy": "yarn build:front && wrangler build && wrangler publish",
+    "test": ""
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "Safari >= 9",
+    "last 1 Samsung versions",
+    "IE 11",
+    "last 2 firefox versions",
+    "last 2 ChromeAndroid versions",
+    "last 1 Edge versions",
+    "last 2 iOS versions"
+  ]
+}

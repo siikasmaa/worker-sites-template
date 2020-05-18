@@ -1,0 +1,22 @@
+.cargo-ok
+.DS_Store
+dist
+node_modules
+transpiled
+worker
+build
+workers-site
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+package-lock.json
+wrangler.toml
