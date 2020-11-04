@@ -5,7 +5,7 @@ const defaultHeaders = [
   ['Content-Security-Policy', 'frame-ancestors none'],
   ['Strict-Transport-Security', 'max-age=3600; includeSubDomains'],
   ['X-Content-Type-Options', 'nosniff'],
-  ['X-Frame-Options', 'deny'],
+  ['X-Frame-Options', 'deny']
 ]
 
 export const handleRequest = async (event: FetchEvent): Promise<Response> => {
@@ -22,13 +22,12 @@ export const handleRequest = async (event: FetchEvent): Promise<Response> => {
     if (!DEBUG) {
       try {
         let notFoundResponse = await getAssetFromKV(event, {
-          mapRequestToAsset: requestInit =>
-            new Request(`${url.origin}/404.html`, requestInit),
+          mapRequestToAsset: req => new Request(`${url.origin}/404.html`, req)
         })
 
         return new Response(notFoundResponse.body, {
           ...notFoundResponse,
-          status: 404,
+          status: 404
         })
       } catch (e) {}
     }

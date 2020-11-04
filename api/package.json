@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Cloudflare worker as a API",
   "private": true,
+  "author": "Otto Siikasmaa",
+  "license": "no-license",
   "scripts": {
     "build": "webpack",
     "dev": "NODE_ENV=development npm run build",
@@ -11,8 +13,6 @@
     "test": "npm run test:clean && npm run transpile && mocha --require source-map-support/register --recursive transpiled/test",
     "transpile": "tsc --project ./test"
   },
-  "author": "Otto Siikasmaa",
-  "license": "no-license",
   "dependencies": {},
   "devDependencies": {
     "@cloudflare/kv-asset-handler": "^0.0.10",
